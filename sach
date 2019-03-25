@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class Sach{
+String masach, tensach, hinh, matg, matl, soluong, manxb, namxb, files;
+Scanner scan = new Scanner(System.in);
+
+public void input(){
+System.out.print("Nhập mã sách:");
+masach = scan.nextLine();
+System.out.print("Nhập tên sách:");
+tensach = scan.nextLine();
+System.out.print("Nhập hình sách:");
+hinh = scan.nextLine();
+System.out.print("Nhập mã matg:");
+matg = scan.nextLine();
+System.out.print("Nhập mã thể loại:");
+matl = scan.nextLine();
+System.out.print("Nhập số lượng sách:");
+soluong = scan.nextLine();
+System.out.print("Nhập mã nhà xuất bản sách:");
+manxb = scan.nextLine();
+System.out.print("Nhập năm xuất bản sách:");
+manxb = scan.nextLine();
+System.out.print("Nhập file sách:");
+files = scan.nextLine();
+}
+
+public voi output(){
+System.out.printf("masach","tensach","hinh","matg","matl","soluong","manxb","manxb","files");
+}
+
+public void close(){
+scan.close();
+}
+}
