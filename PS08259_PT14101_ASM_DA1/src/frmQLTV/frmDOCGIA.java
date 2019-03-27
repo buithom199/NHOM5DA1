@@ -30,6 +30,34 @@ public class frmDOCGIA extends javax.swing.JFrame {
         lblBR.setIcon(new ImageIcon(getClass().getResource("/BR/brdg-2.jpg")));
         setLocationRelativeTo(null);
     }
+    public void laydulieuDOCGIA(String sql){
+        try {
+            tblDOCGIA.removeAll();
+            docgia.clear();
+            docgia = DOCGIADao.laydulieuDOCGIA(sql);
+            fillToTableDOCGIA();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Tải dữ liệu lên thất bại");
+        }
+    }
+    public void DisplayDOCGIA(int i){
+        try {
+            if (!docgia.isEmpty()) {
+                Docgia nv = docgia.get(i);
+                txtMADOCGIA.setText(nv.manv);
+                txtTENDOCGIA.setText(nv.tennv);
+                txtNVNGAYSINH.setText(nv.ngaysinh);
+                txtNVSDT.setText(nv.sdt);
+                txtNVEMAIL.setText(nv.email);
+                txtDGDIACHI.setText(nv.diachi);
+                txtDGMATKHAU.setText(nv.mk);
+                btnDGHINH.setIcon(new ImageIcon(getClass().getResource("/img/" + nv.hinhanh)));
+                this.hinhanh = nv.hinhanh;
+            } else {
+            }
+        } catch (Exception e) {
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
