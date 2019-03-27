@@ -51,13 +51,28 @@ public class frmDOCGIA extends javax.swing.JFrame {
                 txtNVEMAIL.setText(nv.email);
                 txtDGDIACHI.setText(nv.diachi);
                 txtDGMATKHAU.setText(nv.mk);
-                btnDGHINH.setIcon(new ImageIcon(getClass().getResource("/img/" + nv.hinhanh)));
+                btnDGHINH.setIcon(new ImageIcon(getClass().getResource("/img/" + dg.hinhanh)));
                 this.hinhanh = nv.hinhanh;
             } else {
             }
         } catch (Exception e) {
         }
     }
+ private void tblDOCGIAMouseClicked(java.awt.event.MouseEvent evt) {                                     
+        try {
+            Docgia dg = docgia.get(tblDOCGIA.getSelectedRow());
+            txtMADOCGIA.setText(s.getMasach());
+            txtTENDOCGIA.setText(s.getTensach());
+            txtNVNGAYSINH.setText(nv.ngaysinh);
+                txtNVSDT.setText(nv.sdt);
+                txtNVEMAIL.setText(nv.email);
+                txtDGDIACHI.setText(nv.diachi);
+                txtDGMATKHAU.setText(nv.mk);
+            currentindex = tblDOCGIA.getSelectedRow() + 1;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Dữ liệu trống");
+        }
+    }                                    
 
     /**
      * This method is called from within the constructor to initialize the form.
